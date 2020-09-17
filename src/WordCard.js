@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CharacterCard from './CharacterCard';
 import _ from 'lodash';
-// import { useState, useEffect } from '../node_modules/react/cjs/react.development';
 
 const prepareStateFromWord = (given_word) => {
  let word = given_word.toUpperCase()
@@ -41,7 +40,7 @@ const activationHandler = (c) => {
         if(guess.length == state.word.length){
         if(guess == state.word){
         console.log('yeah!')
-        setState({...state, guess: '', completed: true})
+        setState({...state, guess: '', attempt: state.attempt + 1})
         }else{
         console.log('reset')
         setState({...state, guess: '', attempt: state.attempt + 1})
